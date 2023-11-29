@@ -10,7 +10,7 @@ public class ExitA {
         Socket ActionClientSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
-        int ActionSocketNumber = 4545;
+        int ActionSocketNumber = 5958;
         String ActionServerName = "localhost";
         String ActionClientID = "Exit A";
 
