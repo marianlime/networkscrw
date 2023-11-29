@@ -10,9 +10,9 @@ public class parkingServer {
         String ActionServerName = "ParkingServer";
         int ActionServerPort = 5958;
 
-        int parkingSpaces = 5;
+        int initialparkingSpaces = 5;
 
-        parkingState ourSharedActionStateObject = new parkingState(parkingSpaces);
+        parkingState ourSharedActionStateObject = new parkingState(initialparkingSpaces);
 
 
         try{
