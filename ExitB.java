@@ -10,9 +10,9 @@ public class ExitB {
         Socket ActionClientSocket = null;
         PrintWriter out = null;
         BufferedReader in = null;
-        int ActionSocketNumber = 4545;
+        int ActionSocketNumber = 5958;
         String ActionServerName = "localhost";
-        String ActionClientID = "Exit A";
+        String ActionClientID = "Exit B";
 
         try {
             ActionClientSocket = new Socket(ActionServerName, ActionSocketNumber);
