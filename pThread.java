@@ -18,7 +18,7 @@ public class parkingThread extends Thread {
 
     public void run(){
         try{
-            System.out.println(myActionServerThreadName + "initialising");
+            System.out.println(myActionServerThreadName + " initialising");
             PrintWriter out = new PrintWriter(actionSocket.getOutputStream(), true);
             BufferedReader in = new BufferedReader(new InputStreamReader(actionSocket.getInputStream()));
             String inputLine, outputLine;
@@ -28,10 +28,12 @@ public class parkingThread extends Thread {
                     mySharedActionStateObject.acquireLock();
                     outputLine = mySharedActionStateObject.processInput(myActionServerThreadName, inputLine);
                     out.print(outputLine);
-                    mySharedActionStateObject.releaseLock();
+                    out.flush();
                 }
                 catch(InterruptedException e){
                     System.err.println("Failed to get lock when reading" + e);
+                } finally{
+                    mySharedActionStateObject.releaseLock();
                 }
             }
 
